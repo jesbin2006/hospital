@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+
+
+
+
+ {% block title%}
+ Booking
+
+ {% endblock %}
+
+ 
+
+
+
+{% block content %}
+
+<h2 class="text-center my-4">Make An Appointment</h2>
+
+
+<div class="container d-flex justify-content-center">
+    <div class="card p-4 shadow" style="width: 400px;">
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="row mb-3 align-items-center">
+        <label class="col-4 col-form-label text-end">Patient Name</label>
+        <div class="col-8">
+            {{ form.p_name }}
+        </div>
+    </div>
+
+    <div class="row mb-3 align-items-center">
+        <label class="col-4 col-form-label text-end">Phone </label>
+        <div class="col-8">
+            {{ form.p_phone }}
+        </div>
+    </div>
+
+    <div class="row mb-3 align-items-center">
+        <label class="col-4 col-form-label text-end">Email </label>
+        <div class="col-8">
+            {{ form.p_email }}
+        </div>
+    </div>
+
+    <div class="row mb-3 align-items-center">
+        <label class="col-4 col-form-label text-end">Doctor </label>
+        <div class="col-8">
+            {{ form.doc_name }}
+        </div>
+    </div>
+
+    <div class="row mb-3 align-items-center">
+        <label class="col-4 col-form-label text-end">Booking Date</label>
+        <div class="col-8">
+            {{ form.booking_date }}
+        </div>
+    </div>
+
+
+            <button type="submit" class="btn btn-primary w-100">
+                Submit
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
+
